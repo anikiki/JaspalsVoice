@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+/support_files/debug.keystore
+/support_files/release.keystore
+copyright
+.idea
+/support_files/*.keystore
+/support_files/release.keystore
