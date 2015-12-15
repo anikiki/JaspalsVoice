@@ -3,8 +3,14 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="button_padding">16dp</dimen>
+    <dimen name="button_padding">12dp</dimen>
 
     <dimen name="margin_xx_small">2dp</dimen>
+    <dimen name="margin_x_small">4dp</dimen>
     <dimen name="margin_small">8dp</dimen>
+
+    <dimen name="text_big_size">24sp</dimen>
+    <dimen name="text_normal_size">20sp</dimen>
+    <dimen name="text_small_size">18sp</dimen>
+
 </resources>

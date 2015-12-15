@@ -1,216 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="uk.co.jaspalsvoice.jv.MainActivity">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context="uk.co.jaspalsvoice.jv.MainActivity">
+
+    <TextView
+        android:background="@color/colorAccent_10"
+        android:id="@+id/text_case"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/margin_x_small"
+        android:text="Aa"
+        android:textSize="@dimen/text_normal_size"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/message_text"
-        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/text_big_size"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:orientation="horizontal">
 
         <TextView
+            android:background="@drawable/clear_button_selector"
+            android:gravity="center"
             android:id="@+id/clear_screen"
-            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_xx_small"
             android:layout_weight="1"
-            android:gravity="center"
-            android:background="@drawable/clear_button_selector"
+            android:layout_width="0dp"
             android:padding="@dimen/margin_small"
-            android:text="@string/clear_screen" />
+            android:text="@string/clear_screen"
+            android:textSize="@dimen/text_small_size"/>
 
         <TextView
+            android:background="@drawable/clear_button_selector"
+            android:gravity="center"
             android:id="@+id/delete_letter"
-            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_xx_small"
             android:layout_weight="1"
-            android:gravity="center"
-            android:background="@drawable/clear_button_selector"
+            android:layout_width="0dp"
             android:padding="@dimen/margin_small"
-            android:text="@string/delete_letter" />
+            android:text="@string/delete_letter"
+            android:textSize="@dimen/text_small_size"/>
 
     </LinearLayout>
 
     <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/one"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="1" />
+                android:text="1\nSym"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/two"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="2\nABC" />
+                android:text="2\nABC"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/three"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="3\nDEF" />
+                android:text="3\nDEF"
+                android:textStyle="bold"/>
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/four"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="4\nGHI" />
+                android:text="4\nGHI"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/five"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="5\nJKL" />
+                android:text="5\nJKL"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/six"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="6\nMNO" />
+                android:text="6\nMNO"
+                android:textStyle="bold"/>
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/seven"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="7\nPQRS" />
+                android:text="7\nPQRS"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/eight"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="8\nTUV" />
+                android:text="8\nTUV"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/nine"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="9\nWXYZ" />
+                android:text="9\nWXYZ"
+                android:textStyle="bold"/>
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/star"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="*" />
+                android:text="*\nAa/A/a"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/zero"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="0\n_" />
+                android:text="0\n_"
+                android:textStyle="bold"/>
 
             <TextView
+                android:background="@drawable/key_selector"
+                android:gravity="center"
                 android:id="@+id/hash"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+                android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="#" />
+                android:text="#"
+                android:textStyle="bold"/>
         </TableRow>
     </TableLayout>
 

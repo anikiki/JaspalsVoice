@@ -9,4 +9,6 @@
 
     <color name="colorPrimaryDark_10">#1A303F9F</color>
     <color name="colorPrimaryDark_40">#66303F9F</color>
+
+    <color name="colorAccent_10">#1AFF4081</color>
 </resources>
