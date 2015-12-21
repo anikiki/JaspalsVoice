@@ -28,6 +28,12 @@
         android:layout_width="match_parent"
         android:textSize="@dimen/text_big_size"/>
 
+    <TextView
+        android:id="@+id/suggestions"
+        android:padding="@dimen/margin_x_small"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

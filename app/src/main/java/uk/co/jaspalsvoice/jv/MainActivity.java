@@ -16,6 +16,9 @@ import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
+import uk.co.jaspalsvoice.jv.task.FetchWordsTask;
+import uk.co.jaspalsvoice.jv.task.InitWordsTask;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         private boolean uppercase;
         private int textCase;
         private String[] textCases;
+        private String[] wordSeparators;
+        private StringBuilder currentWord;
 
         public KeypadHandler(MainActivity activity) {
             activityWeakReference = new WeakReference<>(activity);
@@ -46,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
             uppercase = true;
             textCase = 0;
             textCases = new String[] {TEXT_CASE_Aa, TEXT_CASE_A, TEXT_CASE_a};
+            wordSeparators = new String[] {" ", ".", ",", ";"};
+            currentWord = new StringBuilder(100);
         }
 
         @Override
@@ -61,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if (msg.what == CLEAR_MESSAGE) {
                 clear();
+                resetCurrentWord();
             } else if (msg.what == START_TIMER_MESSAGE_CODE) {
                 displayOnScreen();
             } else {
@@ -104,17 +112,38 @@ public class MainActivity extends AppCompatActivity {
             if (currentLetter == null) {
                 activity.messageTextView.append(messageCodes.toString());
             } else {
+                if (isEndOfWord(currentLetter)) {
+                    resetCurrentWord();
+                } else {
+                    currentWord.append(currentLetter);
+                }
                 if (highlighted) {
                     String text = activity.messageTextView.getText().toString();
                     if (text.length() > 0) {
                         activity.messageTextView.setText(text.substring(0, text.length() - 1));
                     }
                 }
+                Log.i(TAG, "displayOnScreen: currentWord: " + currentWord);
+                new FetchWordsTask(activity.getApplicationContext(), activity.onResultsListener).execute(currentWord.toString());
                 String textToDisplay = getTextToDisplayWithCorrectCase(currentLetter);
                 activity.messageTextView.append(textToDisplay);
             }
             clear();
             Log.i(TAG, "displayOnScreen END");
+        }
+
+        private boolean isEndOfWord(String letter) {
+            for (int i = 0; i < wordSeparators.length; i++) {
+                if (wordSeparators[i].equals(letter)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void resetCurrentWord() {
+            currentWord.delete(0, currentWord.length());
+            activity.suggestionsView.setText(null);
         }
 
         private String getTextToDisplayWithCorrectCase(String text) {
@@ -190,8 +219,16 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView currentTextCaseView;
     private TextView messageTextView;
+    private TextView suggestionsView;
     private KeypadHandler handler;
     private int previousCode = -1;
+
+    private FetchWordsTask.OnResultsListener onResultsListener = new FetchWordsTask.OnResultsListener() {
+        @Override
+        public void onUpdateUi(String text) {
+            suggestionsView.setText(text);
+        }
+    };
 
     private View.OnClickListener keyClickListener = new View.OnClickListener() {
         @Override
@@ -272,6 +309,7 @@ public class MainActivity extends AppCompatActivity {
 
         currentTextCaseView = (TextView) findViewById(R.id.text_case);
         messageTextView = (TextView) findViewById(R.id.message_text);
+        suggestionsView = (TextView) findViewById(R.id.suggestions);
 
         findViewById(R.id.one).setOnClickListener(keyClickListener);
         findViewById(R.id.two).setOnClickListener(keyClickListener);
@@ -288,6 +326,8 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.clear_screen).setOnClickListener(clearScreenClickListener);
         findViewById(R.id.delete_letter).setOnClickListener(deleteLetterClickListener);
+
+        new InitWordsTask(getApplicationContext()).execute(getResources());
     }
 
     public int getPreviousCode() {
