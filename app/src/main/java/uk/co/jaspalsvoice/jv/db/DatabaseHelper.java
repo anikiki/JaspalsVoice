@@ -21,7 +21,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (SINGLETON == null) {
             SINGLETON = new DatabaseHelper(context);
         }
-
         return (SINGLETON);
     }
 
@@ -32,8 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE VIRTUAL TABLE english_words USING fts4("
-                + "_id INTEGER PRIMARY KEY, word TEXT, "
-                + "order=DESC);");
+                + "word TEXT, rank INTEGER"
+                + ");");
     }
 
     @Override
@@ -42,50 +41,59 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         throw new RuntimeException("How did we get here?");
     }
 
-    public void insertWords(Context app, List<String> words, int count) {
+    public void insertWords(Context app, List<String> words) {
         SQLiteDatabase db = getDb(app);
-
         db.beginTransaction();
-
         db.delete("english_words", null, null);
-
         try {
             for (String word : words) {
-                Object[] args = {count, word};
-
-                db.execSQL("INSERT INTO english_words (_id, word "
-                                + ") "
-                                + "VALUES (?, ?)",
-                        args);
-                count++;
+                Object[] args = {word, 0};
+                db.execSQL("INSERT INTO english_words (word, rank) VALUES (?, ?)", args);
             }
-
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();
         }
     }
 
+    public void insertWord(Context app, String word) {
+        SQLiteDatabase db = getDb(app);
+        db.beginTransaction();
+        try {
+            String[] arg = {word};
+            Cursor cursor = db.rawQuery("SELECT * FROM english_words WHERE word MATCH ? LIMIT 0,1", arg);
+            if (cursor != null) {
+                if (cursor.getCount() == 0) {
+                    Object[] args = {word, 0};
+                    db.execSQL("INSERT INTO english_words (word, rank) VALUES (?, ?)", args);
+                } else {
+                    if (cursor.moveToFirst()) {
+                        int rank = cursor.getInt(1);
+                        rank += 1;
+                        db.execSQL("UPDATE english_words SET rank = '" + rank + "' WHERE word = '" + word + "';");
+                    }
+                }
+            }
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+        }
+    }
 
     public Cursor loadWords(Context app, String match) {
         SQLiteDatabase db = getDb(app);
-
         if (TextUtils.isEmpty(match)) {
-            return (db.rawQuery("SELECT * FROM english_words ORDER BY _id ASC LIMIT 0,5",
-                    null));
+            return (db.rawQuery("SELECT * FROM english_words ORDER BY rank DESC LIMIT 0,5", null));
         }
-
         String[] args = {match + '*'};
-
         return (db.rawQuery("SELECT * FROM english_words WHERE word "
-                + "MATCH ? ORDER BY _id ASC LIMIT 0,5", args));
+                + "MATCH ? ORDER BY rank DESC LIMIT 0,5", args));
     }
 
     private SQLiteDatabase getDb(Context app) {
         if (db == null) {
             db = getInstance(app).getWritableDatabase();
         }
-
         return (db);
     }
 }

@@ -5,6 +5,9 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import uk.co.jaspalsvoice.jv.db.DatabaseHelper;
 
 /**
@@ -34,24 +37,23 @@ public class FetchWordsTask extends AsyncTask<String, Void, Cursor> {
     @Override
     protected void onPostExecute(Cursor cursor) {
         Log.i(TAG, "onPostExecute: Words found: ");
+        List<String> results = new ArrayList<>();
         if (cursor != null) {
             if (cursor.moveToFirst()) {
-                StringBuilder results = new StringBuilder(150);
                 do {
-                    Log.i(TAG, "onPostExecute: " + cursor.getString(1));
-                    results.append(cursor.getString(1));
-                    results.append(" ");
+                    Log.i(TAG, "onPostExecute: " + cursor.getString(0));
+                    results.add(cursor.getString(0));
                 } while (cursor.moveToNext());
-                if (results.length() > 0) {
-                    onResultsListener.onUpdateUi(results.toString());
+                if (results.size() > 0) {
+                    onResultsListener.onUpdateUi(results);
                     return;
                 }
             }
         }
-        onResultsListener.onUpdateUi(null);
+        onResultsListener.onUpdateUi(results);
     }
 
     public interface OnResultsListener {
-        void onUpdateUi(String text);
+        void onUpdateUi(List<String> text);
     }
 }

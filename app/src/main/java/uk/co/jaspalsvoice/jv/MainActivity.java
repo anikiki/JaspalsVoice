@@ -1,5 +1,6 @@
 package uk.co.jaspalsvoice.jv;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Message;
@@ -9,15 +10,21 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.BackgroundColorSpan;
 import android.util.Log;
+import android.view.ActionMode;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import uk.co.jaspalsvoice.jv.task.FetchWordsTask;
 import uk.co.jaspalsvoice.jv.task.InitWordsTask;
+import uk.co.jaspalsvoice.jv.task.InsertWordTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -98,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             letters.put("7", "PQRS7");
             letters.put("8", "TUV8");
             letters.put("9", "WXYZ9");
-            letters.put("0", "0 ");
+            letters.put("0", " 0");
 
             return letters;
         }
@@ -143,7 +150,10 @@ public class MainActivity extends AppCompatActivity {
 
         private void resetCurrentWord() {
             currentWord.delete(0, currentWord.length());
-            activity.suggestionsView.setText(null);
+            activity.suggestions0View.setText(null);
+            activity.suggestions1View.setText(null);
+            activity.suggestions2View.setText(null);
+            activity.suggestions3View.setText(null);
         }
 
         private String getTextToDisplayWithCorrectCase(String text) {
@@ -219,14 +229,27 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView currentTextCaseView;
     private TextView messageTextView;
-    private TextView suggestionsView;
+    private TextView suggestions0View;
+    private TextView suggestions1View;
+    private TextView suggestions2View;
+    private TextView suggestions3View;
     private KeypadHandler handler;
     private int previousCode = -1;
 
     private FetchWordsTask.OnResultsListener onResultsListener = new FetchWordsTask.OnResultsListener() {
         @Override
-        public void onUpdateUi(String text) {
-            suggestionsView.setText(text);
+        public void onUpdateUi(List<String> text) {
+            suggestions0View.setText(text.size() >= 1 ? text.get(0) : null);
+            suggestions1View.setText(text.size() >= 2 ? text.get(1) : null);
+            suggestions2View.setText(text.size() >= 3 ? text.get(2) : null);
+            suggestions3View.setText(text.size() >= 4 ? text.get(3) : null);
+        }
+    };
+
+    private View.OnClickListener onSuggestionListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
         }
     };
 
@@ -300,6 +323,54 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private ActionMode.Callback selectionCallback = new ActionMode.Callback() {
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return true;
+        }
+
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            menu.removeItem(android.R.id.selectAll);
+            menu.removeItem(android.R.id.cut);
+            menu.removeItem(android.R.id.copy);
+            menu.add(0, 0, 0, "Add to dictionary").setIcon(R.drawable.add_to_dictionary);
+            return true;
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            switch (item.getItemId()) {
+                case 0:
+                    int min = 0;
+                    int max = messageTextView.getText().length();
+                    if (messageTextView.isFocused()) {
+                        final int selStart = messageTextView.getSelectionStart();
+                        final int selEnd = messageTextView.getSelectionEnd();
+
+                        min = Math.max(0, Math.min(selStart, selEnd));
+                        max = Math.max(0, Math.max(selStart, selEnd));
+                    }
+                    // Perform your definition lookup with the selected text
+                    final CharSequence selectedText = messageTextView.getText().subSequence(min, max);
+                    Log.i(TAG, "onActionItemClicked: selected text = " + selectedText);
+                    new InsertWordTask(new WeakReference<Context>(MainActivity.this)).execute(selectedText.toString());
+                    // Finish and close the ActionMode
+                    mode.finish();
+                    return true;
+                default:
+                    break;
+            }
+            return false;
+        }
+
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -309,7 +380,11 @@ public class MainActivity extends AppCompatActivity {
 
         currentTextCaseView = (TextView) findViewById(R.id.text_case);
         messageTextView = (TextView) findViewById(R.id.message_text);
-        suggestionsView = (TextView) findViewById(R.id.suggestions);
+        messageTextView.setCustomSelectionActionModeCallback(selectionCallback);
+        suggestions0View = (TextView) findViewById(R.id.suggestions_0);
+        suggestions1View = (TextView) findViewById(R.id.suggestions_1);
+        suggestions2View = (TextView) findViewById(R.id.suggestions_2);
+        suggestions3View = (TextView) findViewById(R.id.suggestions_3);
 
         findViewById(R.id.one).setOnClickListener(keyClickListener);
         findViewById(R.id.two).setOnClickListener(keyClickListener);
@@ -328,6 +403,13 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.delete_letter).setOnClickListener(deleteLetterClickListener);
 
         new InitWordsTask(getApplicationContext()).execute(getResources());
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Context Menu");
+        menu.add(0, v.getId(), 0, "Action 1");
     }
 
     public int getPreviousCode() {

@@ -48,7 +48,7 @@ public class InitWordsTask extends AsyncTask<Object, Void, Void> {
             Log.e(TAG, "Exception opening dictionary file.", e);
         }
         try {
-            DatabaseHelper.getInstance(appContext).insertWords(appContext, words, 0);
+            DatabaseHelper.getInstance(appContext).insertWords(appContext, words);
         } catch (Exception e) {
             Log.e(TAG, "Exception populating database", e);
         }

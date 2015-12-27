@@ -2,4 +2,5 @@
     <string name="app_name">Jaspal\'s Voice</string>
     <string name="clear_screen">Clear screen</string>
     <string name="delete_letter">Delete letter</string>
+    <string name="no_suggestion">…</string>
 </resources>
