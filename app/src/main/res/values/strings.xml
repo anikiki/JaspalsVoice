@@ -3,4 +3,5 @@
     <string name="clear_screen">Clear screen</string>
     <string name="delete_letter">Delete letter</string>
     <string name="no_suggestion">…</string>
+    <string name="share">Share</string>
 </resources>
