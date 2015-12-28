@@ -21,22 +21,24 @@
         android:textSize="@dimen/text_normal_size"
         android:textStyle="bold"/>
 
-    <TextView
+    <EditText
+        android:background="@null"
+        android:gravity="top"
         android:id="@+id/message_text"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:textIsSelectable="true"
         android:textSize="@dimen/text_big_size"/>
 
     <LinearLayout
+        android:background="@drawable/bg_layout_suggestion"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_xx_small"
         android:layout_width="match_parent"
         android:orientation="horizontal">
 
         <TextView
-            android:background="@drawable/bg_suggestion"
+            android:background="@drawable/suggestion_selector"
             android:clickable="true"
             android:gravity="center"
             android:id="@+id/suggestions_0"
@@ -50,8 +52,13 @@
             android:textSize="@dimen/text_x_small_size"
             android:textStyle="bold"/>
 
+        <View
+            android:background="@color/colorPrimary_40"
+            android:layout_height="match_parent"
+            android:layout_width="1dp"/>
+
         <TextView
-            android:background="@drawable/bg_suggestion"
+            android:background="@drawable/suggestion_selector"
             android:clickable="true"
             android:gravity="center"
             android:id="@+id/suggestions_1"
@@ -64,8 +71,13 @@
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_x_small_size"/>
 
+        <View
+            android:background="@color/colorPrimary_40"
+            android:layout_height="match_parent"
+            android:layout_width="1dp"/>
+
         <TextView
-            android:background="@drawable/bg_suggestion"
+            android:background="@drawable/suggestion_selector"
             android:clickable="true"
             android:gravity="center"
             android:id="@+id/suggestions_2"
@@ -78,8 +90,13 @@
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_x_small_size"/>
 
+        <View
+            android:background="@color/colorPrimary_40"
+            android:layout_height="match_parent"
+            android:layout_width="1dp"/>
+
         <TextView
-            android:background="@drawable/bg_suggestion"
+            android:background="@drawable/suggestion_selector"
             android:clickable="true"
             android:gravity="center"
             android:id="@+id/suggestions_3"

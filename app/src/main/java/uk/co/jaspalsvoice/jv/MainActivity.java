@@ -2,12 +2,15 @@ package uk.co.jaspalsvoice.jv;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -17,6 +20,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String defaultSuggestion;
     private TextView currentTextCaseView;
-    private TextView messageTextView;
+    private EditText messageTextView;
     private TextView suggestions0View;
     private TextView suggestions1View;
     private TextView suggestions2View;
@@ -119,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             resetHandlerState(KeypadHandler.CLEAR_MESSAGE);
             messageTextView.setText(null);
+            showCursor();
         }
     };
 
@@ -129,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
             String text = messageTextView.getText().toString();
             if (!TextUtils.isEmpty(text)) {
                 messageTextView.setText(text.substring(0, text.length() - 1));
+                showCursor();
             }
         }
     };
@@ -136,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionMode.Callback selectionCallback = new ActionMode.Callback() {
         @Override
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return true;
+            return false;
         }
 
         @Override
@@ -144,6 +150,11 @@ public class MainActivity extends AppCompatActivity {
             menu.removeItem(android.R.id.selectAll);
             menu.removeItem(android.R.id.cut);
             menu.removeItem(android.R.id.copy);
+            menu.removeItem(android.R.id.paste);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                menu.removeItem(android.R.id.replaceText);
+                menu.removeItem(android.R.id.shareText);
+            }
             menu.add(0, 0, 0, "Add to dictionary").setIcon(R.drawable.add_to_dictionary);
             return true;
         }
@@ -169,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.i(TAG, "onActionItemClicked: selected text = " + selectedText);
                     new InsertWordTask(new WeakReference<Context>(MainActivity.this)).execute(selectedText.toString());
                     mode.finish();
-                    return true;
+                    // return true;
                 default:
                     break;
             }
@@ -182,11 +193,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onAppendMessage(String msg) {
             messageTextView.append(msg);
+            showCursor();
         }
 
         @Override
         public void onAppendMessage(Spannable msg) {
             messageTextView.append(msg);
+            showCursor();
         }
 
         @Override
@@ -197,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void setMessage(String msg) {
             messageTextView.setText(msg);
+            showCursor();
         }
 
         @Override
@@ -244,12 +258,17 @@ public class MainActivity extends AppCompatActivity {
         defaultSuggestion = getString(R.string.no_suggestion);
         shareIntent.setType("text/plain");
 
-        handler = new KeypadHandler();
+        handler = new KeypadHandler(ContextCompat.getColor(this, R.color.colorAccent_40));
         handler.setListener(keyPadListener);
 
         currentTextCaseView = (TextView) findViewById(R.id.text_case);
 
-        messageTextView = (TextView) findViewById(R.id.message_text);
+        messageTextView = (EditText) findViewById(R.id.message_text);
+        messageTextView.setTextIsSelectable(true);
+        messageTextView.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        messageTextView.setCursorVisible(true);
+        messageTextView.setText("");
+        showCursor();
         messageTextView.setCustomSelectionActionModeCallback(selectionCallback);
         messageTextView.addTextChangedListener(messageWatcher);
 
@@ -300,6 +319,10 @@ public class MainActivity extends AppCompatActivity {
         handler.removeMessages(KeypadHandler.START_TIMER_MESSAGE_CODE);
         handler.removeMessages(KeypadHandler.KEY_MESSAGE_WHAT);
         handler.sendEmptyMessage(message);
+    }
+
+    private void showCursor() {
+        messageTextView.setSelection(messageTextView.getText().length());
     }
 
 }
