@@ -20,6 +20,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -265,8 +266,8 @@ public class MainActivity extends AppCompatActivity {
 
         messageTextView = (EditText) findViewById(R.id.message_text);
         messageTextView.setTextIsSelectable(true);
-        messageTextView.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         messageTextView.setCursorVisible(true);
+        messageTextView.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS | EditorInfo.TYPE_CLASS_TEXT | EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE);
         messageTextView.setText("");
         showCursor();
         messageTextView.setCustomSelectionActionModeCallback(selectionCallback);

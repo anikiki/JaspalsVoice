@@ -23,11 +23,12 @@
 
     <EditText
         android:background="@null"
-        android:gravity="top"
+        android:gravity="top|left"
         android:id="@+id/message_text"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_width="match_parent"
+        android:singleLine="false"
         android:textSize="@dimen/text_big_size"/>
 
     <LinearLayout
@@ -118,29 +119,67 @@
 
         <TextView
             android:background="@drawable/clear_button_selector"
+            android:drawablePadding="@dimen/margin_normal"
             android:gravity="center"
             android:id="@+id/clear_screen"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_xx_small"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:padding="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small"
             android:text="@string/clear_screen"
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_small_size"/>
 
         <TextView
             android:background="@drawable/clear_button_selector"
+            android:drawablePadding="@dimen/margin_normal"
             android:gravity="center"
             android:id="@+id/delete_letter"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_xx_small"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:padding="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small"
             android:text="@string/delete_letter"
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_small_size"/>
+
+        <!--<TextView-->
+        <!--android:background="@drawable/clear_button_selector"-->
+        <!--android:drawableLeft="@drawable/clear_screen"-->
+        <!--android:drawablePadding="@dimen/margin_normal"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:id="@+id/clear_screen"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="@dimen/margin_xx_small"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:paddingBottom="@dimen/margin_small"-->
+        <!--android:paddingLeft="@dimen/margin_normal"-->
+        <!--android:paddingTop="@dimen/margin_small"-->
+        <!--android:text="@string/clear_screen"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="@dimen/text_small_size"/>-->
+
+        <!--<TextView-->
+        <!--android:background="@drawable/clear_button_selector"-->
+        <!--android:drawableLeft="@drawable/delete"-->
+        <!--android:drawablePadding="@dimen/margin_normal"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:id="@+id/delete_letter"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="@dimen/margin_xx_small"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:paddingBottom="@dimen/margin_small"-->
+        <!--android:paddingLeft="@dimen/margin_normal"-->
+        <!--android:paddingTop="@dimen/margin_small"-->
+        <!--android:text="@string/delete_letter"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="@dimen/text_small_size"/>-->
 
     </LinearLayout>
 
@@ -321,19 +360,23 @@
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
-            <TextView
-                android:background="@drawable/key_selector"
-                android:gravity="center"
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
                 android:id="@+id/hash"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:paddingBottom="@dimen/button_padding"
-                android:paddingTop="@dimen/button_padding"
-                android:text="#"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"/>
+                android:clickable="true">
+
+                <ImageView
+                    android:scaleType="fitCenter"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="@dimen/button_padding"
+                    android:paddingTop="@dimen/button_padding"
+                    android:src="@drawable/flip"/>
+            </FrameLayout>
         </TableRow>
     </TableLayout>
 
