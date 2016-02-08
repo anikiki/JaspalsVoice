@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="uk.co.jaspalsvoice.jv">
+<manifest
+    package="uk.co.jaspalsvoice.jv"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -13,11 +14,36 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:label="@string/title_personal_details"
+            android:name=".activities.PersonalDetailsActivity"/>
+        <activity
+            android:label="@string/title_medicines"
+            android:name=".activities.MedicinesActivity"/>
+        <activity
+            android:label="@string/title_medical_allergies"
+            android:name=".activities.MedicalAllergiesActivity"/>
+        <activity
+            android:label="@string/title_food_allergies"
+            android:name=".activities.FoodAllergiesActivity"/>
+        <activity
+            android:label="@string/title_gp"
+            android:name=".activities.GpActivity"/>
+        <activity
+            android:label="@string/title_likes_dislikes"
+            android:name=".activities.LikesDislikesActivity"/>
+        <activity
+            android:label="@string/title_diagnosis"
+            android:name=".activities.DiagnosisActivity"/>
+        <activity
+            android:label="@string/title_about_me"
+            android:name=".activities.AboutMeActivity"/>
     </application>
 
 </manifest>

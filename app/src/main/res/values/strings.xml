@@ -2,6 +2,46 @@
     <string name="app_name">Jaspal\'s Voice</string>
     <string name="clear_screen">Clear screen</string>
     <string name="delete_letter">Delete letter</string>
+    <string name="t_9">T9</string>
     <string name="no_suggestion">…</string>
     <string name="share">Share</string>
+
+    <string name="key_sym_1">"1\nSym"</string>
+    <string name="key_personal_details">"Personal\ndetails"</string>
+
+    <string name="key_abc_2">"2\nABC"</string>
+    <string name="key_medicines">Medicines</string>
+
+    <string name="key_def_3">"3\nDEF</string>
+    <string name="key_medical_allergies">"Medical\nallergies"</string>
+
+    <string name="key_ghi_4">"4\nGHI"</string>
+    <string name="key_food_allergies">"Food\nallergies"</string>
+
+    <string name="key_jkl_5">"5\nJKL"</string>
+    <string name="key_gp">GP</string>
+
+    <string name="key_mno_6">"6\nMNO"</string>
+    <string name="key_likes_dislikes">"Likes /\nDislikes"</string>
+
+    <string name="key_pqrs_7">"7\nPQRS"</string>
+    <string name="key_diagnosis">Diagnosis</string>
+
+    <string name="key_tuv_8">"8\nTUV"</string>
+    <string name="key_about_me">"About\nme"</string>
+
+    <string name="key_wxyz_9">"9\nWXYZ"</string>
+    <string name="key_letter_case">"*\nAa/A/a"</string>
+    <string name="key_space_0">"0\n_"</string>
+
+    <string name="new_line">"\n_"</string>
+
+    <string name="title_personal_details">Personal Details</string>
+    <string name="title_medicines">Medicines</string>
+    <string name="title_medical_allergies">Medical Allergies</string>
+    <string name="title_food_allergies">Food Allergies</string>
+    <string name="title_gp">GP</string>
+    <string name="title_likes_dislikes">Likes/Dislikes</string>
+    <string name="title_diagnosis">Diagnosis</string>
+    <string name="title_about_me">About Me</string>
 </resources>

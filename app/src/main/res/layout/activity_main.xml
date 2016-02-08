@@ -36,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_xx_small"
         android:layout_width="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:background="@drawable/suggestion_selector"
@@ -118,13 +119,28 @@
         android:orientation="horizontal">
 
         <TextView
+            android:background="@drawable/t9_button_selector"
+            android:drawablePadding="@dimen/margin_normal"
+            android:gravity="center"
+            android:id="@+id/t_9"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_xx_small"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small"
+            android:text="@string/t_9"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_small_size"/>
+
+        <TextView
             android:background="@drawable/clear_button_selector"
             android:drawablePadding="@dimen/margin_normal"
             android:gravity="center"
             android:id="@+id/clear_screen"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_xx_small"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_width="0dp"
             android:paddingBottom="@dimen/margin_small"
             android:paddingTop="@dimen/margin_small"
@@ -139,7 +155,7 @@
             android:id="@+id/delete_letter"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_xx_small"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_width="0dp"
             android:paddingBottom="@dimen/margin_small"
             android:paddingTop="@dimen/margin_small"
@@ -201,7 +217,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="1\nSym"
+                android:text="@string/key_sym_1"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -215,7 +231,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="2\nABC"
+                android:text="@string/key_abc_2"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -229,7 +245,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="3\nDEF"
+                android:text="@string/key_def_3"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
         </TableRow>
@@ -248,7 +264,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="4\nGHI"
+                android:text="@string/key_ghi_4"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -262,7 +278,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="5\nJKL"
+                android:text="@string/key_jkl_5"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -276,7 +292,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="6\nMNO"
+                android:text="@string/key_mno_6"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
         </TableRow>
@@ -295,7 +311,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="7\nPQRS"
+                android:text="@string/key_pqrs_7"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -309,7 +325,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="8\nTUV"
+                android:text="@string/key_tuv_8"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -323,7 +339,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="9\nWXYZ"
+                android:text="@string/key_wxyz_9"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
         </TableRow>
@@ -342,7 +358,7 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="*\nAa/A/a"
+                android:text="@string/key_letter_case"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -356,25 +372,25 @@
                 android:layout_width="0dp"
                 android:paddingBottom="@dimen/button_padding"
                 android:paddingTop="@dimen/button_padding"
-                android:text="0\n_"
+                android:text="@string/key_space_0"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
             <FrameLayout
                 android:background="@drawable/clear_button_selector"
+                android:clickable="true"
                 android:id="@+id/hash"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp"
-                android:clickable="true">
+                android:layout_width="0dp">
 
                 <ImageView
-                    android:scaleType="fitCenter"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:paddingBottom="@dimen/button_padding"
                     android:paddingTop="@dimen/button_padding"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/flip"/>
             </FrameLayout>
         </TableRow>
