@@ -15,4 +15,7 @@
     <dimen name="text_small_size">18sp</dimen>
     <dimen name="text_x_small_size">16sp</dimen>
 
+    <dimen name="label_min_width">100dp</dimen>
+    <dimen name="elevation">6dp</dimen>
+
 </resources>

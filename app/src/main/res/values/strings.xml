@@ -36,12 +36,42 @@
 
     <string name="new_line">"\n_"</string>
 
-    <string name="title_personal_details">Personal Details</string>
-    <string name="title_medicines">Medicines</string>
-    <string name="title_medical_allergies">Medical Allergies</string>
-    <string name="title_food_allergies">Food Allergies</string>
-    <string name="title_gp">GP</string>
-    <string name="title_likes_dislikes">Likes/Dislikes</string>
-    <string name="title_diagnosis">Diagnosis</string>
-    <string name="title_about_me">About Me</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="personal_details_name">Name</string>
+    <string name="personal_details_address">Address</string>
+    <string name="personal_details_tel">Tel</string>
+    <string name="personal_details_next_of_kin">Next of kin</string>
+    <string name="personal_details_nhs_no">NHS No</string>
+    <string name="personal_details_religion">Religion</string>
+    <string name="personal_details_language">Language</string>
+
+    <string name="medicines">Medicines</string>
+    <string name="medicines_title">How I take my medication</string>
+
+    <string name="medical_allergies">Medical Allergies</string>
+    <string name="medical_allergies_title">Medical Allergies</string>
+
+    <string name="food_allergies">Food Allergies</string>
+    <string name="food_allergies_title">Food Allergies</string>
+
+    <string name="gp">GP</string>
+    <string name="gp_name">Name</string>
+    <string name="gp_address">Address</string>
+    <string name="gp_phone">Tel</string>
+
+    <string name="likes_dislikes">Likes/Dislikes</string>
+    <string name="likes">Likes</string>
+    <string name="dislikes">Dislikes</string>
+
+    <string name="diagnosis">Diagnosis</string>
+    <string name="diagnosis_title">Diagnosis</string>
+
+    <string name="about_me">About Me</string>
+    <string name="about_me_communicate">How to communicate with me</string>
+    <string name="about_me_seeing_hearing">Seeing / Hearing</string>
+    <string name="about_me_eat">How I eat</string>
+    <string name="about_me_drink">How I drink</string>
+    <string name="about_me_toilet">How I use toilet</string>
+    <string name="about_me_sleep">Sleep (Position / Pattern)</string>
+    <string name="about_me_care">Personal Care</string>
 </resources>
