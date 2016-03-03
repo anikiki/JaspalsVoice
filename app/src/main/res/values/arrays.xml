@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="yes_no_spinner_item">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="about_me_sitting_position_item">
+        <item>Need Help To Sit Up</item>
+        <item>Turn Over</item>
+        <item>Change Position</item>
+        <item>I Need To Use Adjustable Bed</item>
+        <item>Extra Pillows</item>
+        <item>Pressure Relief</item>
+    </string-array>
+</resources>

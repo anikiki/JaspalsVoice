@@ -38,12 +38,13 @@
 
     <string name="personal_details">Personal Details</string>
     <string name="personal_details_name">Name</string>
-    <string name="personal_details_address">Address</string>
-    <string name="personal_details_tel">Tel</string>
-    <string name="personal_details_next_of_kin">Next of kin</string>
-    <string name="personal_details_nhs_no">NHS No</string>
-    <string name="personal_details_religion">Religion</string>
-    <string name="personal_details_language">Language</string>
+    <string name="personal_details_name_to_be_called">Name I would like to be called</string>
+    <string name="personal_details_live_with">Who I live with</string>
+    <string name="personal_details_email">Email</string>
+    <string name="personal_details_dob">D.O.B</string>
+    <string name="personal_details_main_carer">Main Carer</string>
+    <string name="personal_details_carer_tel">Carer Tel</string>
+    <string name="personal_details_translator_needed">Do You Need a Translator</string>
 
     <string name="medicines">Medicines</string>
     <string name="medicines_title">How I take my medication</string>
@@ -67,8 +68,8 @@
     <string name="diagnosis_title">Diagnosis</string>
 
     <string name="about_me">About Me</string>
-    <string name="about_me_communicate">How to communicate with me</string>
-    <string name="about_me_seeing_hearing">Seeing / Hearing</string>
+    <string name="about_me_sitting_position">Sitting (Position/Pattern)</string>
+    <string name="about_me_breathing">Breathing Difficulties</string>
     <string name="about_me_eat">How I eat</string>
     <string name="about_me_drink">How I drink</string>
     <string name="about_me_toilet">How I use toilet</string>

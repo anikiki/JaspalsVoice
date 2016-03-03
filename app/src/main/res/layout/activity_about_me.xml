@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/sitting_position"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"
+            app:entries="@array/about_me_sitting_position_item"/>
+
+        <uk.co.jaspalsvoice.jv.views.YesNoCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/breathing"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"/>
+
+        <uk.co.jaspalsvoice.jv.views.EditableCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/eat"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"/>
+
+        <uk.co.jaspalsvoice.jv.views.EditableCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/drink"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"/>
+
+        <uk.co.jaspalsvoice.jv.views.EditableCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/toilet"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"/>
+
+        <uk.co.jaspalsvoice.jv.views.EditableCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/sleep"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"/>
+
+        <uk.co.jaspalsvoice.jv.views.EditableCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/care"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"/>
+
+    </LinearLayout>
+</ScrollView>

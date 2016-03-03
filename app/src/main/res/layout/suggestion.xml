@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:clickable="true"
+          android:gravity="center_vertical"
+          android:id="@+id/suggestion"
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content"
+          android:minHeight="?android:attr/listPreferredItemHeightSmall"
+          android:paddingLeft="?android:attr/listPreferredItemPaddingRight"
+          android:paddingRight="?android:attr/listPreferredItemPaddingLeft"
+          android:textAppearance="?android:attr/textAppearanceListItemSmall"
+          android:textColor="@android:color/white"/>

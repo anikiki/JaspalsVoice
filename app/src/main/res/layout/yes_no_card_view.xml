@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:drawableRight="@drawable/ic_action_edit"
+        android:id="@+id/title"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minWidth="@dimen/label_min_width"
+        android:padding="@dimen/margin_small"
+        android:textSize="@dimen/text_normal_size"
+        tools:text="Title"/>
+
+    <include layout="@layout/divider"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_width="match_parent"
+        android:padding="@dimen/margin_small"
+        android:singleLine="false"
+        tools:text="Text"/>
+
+    <Spinner
+        android:entries="@array/yes_no_spinner_item"
+        android:id="@+id/spinner"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_width="match_parent"
+        android:padding="@dimen/margin_small"
+        android:visibility="gone">
+    </Spinner>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_small"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="Cancel"/>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="Save"/>
+    </LinearLayout>
+</LinearLayout>

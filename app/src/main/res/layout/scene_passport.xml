@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_height="match_parent"
+              android:layout_margin="@dimen/margin_xx_small"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <TableRow
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/two"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_personal_details"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/three"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_medicines"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/five"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_medical_allergies"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/six"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_food_allergies"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/eight"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_gp"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/nine"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_likes_dislikes"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/zero"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_diagnosis"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:background="@drawable/clear_button_selector"
+                android:clickable="true"
+                android:id="@+id/hash"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_xx_small"
+                android:layout_weight="1"
+                android:layout_width="0dp">
+
+                <TextView
+                    android:background="@drawable/key_selector"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@string/key_about_me"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
