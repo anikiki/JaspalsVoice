@@ -19,7 +19,7 @@
     <string name="key_food_allergies">"Food\nallergies"</string>
 
     <string name="key_jkl_5">"5\nJKL"</string>
-    <string name="key_gp">GP</string>
+    <string name="key_gp">G.P /\nMedical Team</string>
 
     <string name="key_mno_6">"6\nMNO"</string>
     <string name="key_likes_dislikes">"Likes /\nDislikes"</string>
@@ -57,10 +57,15 @@
     <string name="food_allergies">Food Allergies</string>
     <string name="food_allergies_title">Food Allergies</string>
 
-    <string name="gp">GP</string>
-    <string name="gp_name">Name</string>
-    <string name="gp_address">Address</string>
-    <string name="gp_phone">Tel</string>
+    <string name="gp_medical_team">G.P / Medical Team</string>
+    <string name="gp_title">GP</string>
+    <string name="gp_medical_team_name">Name:</string>
+    <string name="gp_medical_team_contact_details">Contact Details:</string>
+    <string name="mnd_contact_title">MND Contact</string>
+    <string name="physiotherapist_title">Physiotherapist</string>
+    <string name="therapist_title">Speech and language therapist</string>
+    <string name="carer_title">Carer</string>
+    <string name="other_medical_title">Other</string>
 
     <string name="likes_dislikes">Likes/Dislikes</string>
     <string name="likes_dislikes_daily_routine">My Daily Routine</string>

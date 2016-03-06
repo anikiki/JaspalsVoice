@@ -33,7 +33,7 @@
             android:label="@string/food_allergies"
             android:name=".activities.FoodAllergiesActivity"/>
         <activity
-            android:label="@string/gp"
+            android:label="@string/gp_medical_team"
             android:name=".activities.GpActivity"/>
         <activity
             android:label="@string/likes_dislikes"
