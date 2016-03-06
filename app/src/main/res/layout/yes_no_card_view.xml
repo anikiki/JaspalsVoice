@@ -20,6 +20,17 @@
     <include layout="@layout/divider"/>
 
     <TextView
+        android:id="@+id/subtitle"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_width="match_parent"
+        android:padding="@dimen/margin_small"
+        android:singleLine="false"
+        android:visibility="gone"
+        tools:text="Text"/>
+
+    <TextView
         android:id="@+id/text"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_small"

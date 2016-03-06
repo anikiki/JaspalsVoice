@@ -18,5 +18,5 @@
     <dimen name="label_min_width">100dp</dimen>
     <dimen name="elevation">6dp</dimen>
 
-    <dimen name="list_card_min_height">200dp</dimen>
+    <dimen name="list_card_item_min_height">36dp</dimen>
 </resources>

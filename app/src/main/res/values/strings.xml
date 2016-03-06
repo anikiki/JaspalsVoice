@@ -36,6 +36,8 @@
 
     <string name="new_line">"\n_"</string>
 
+    <string name="default_text_when_not_specified">Not specified</string>
+
     <string name="personal_details">Personal Details</string>
     <string name="personal_details_name">Name</string>
     <string name="personal_details_name_to_be_called">Name I would like to be called</string>
@@ -61,18 +63,26 @@
     <string name="gp_phone">Tel</string>
 
     <string name="likes_dislikes">Likes/Dislikes</string>
-    <string name="likes">Likes</string>
-    <string name="dislikes">Dislikes</string>
+    <string name="likes_dislikes_daily_routine">My Daily Routine</string>
+    <string name="likes_dislikes_hobbies">My Interests / Hobbies</string>
+    <string name="likes_dislikes_music">Music / Radio Station I listen to</string>
+    <string name="likes_dislikes_tv">Television Shows I Enjoy</string>
+    <string name="likes_dislikes_other">Other</string>
 
     <string name="diagnosis">Diagnosis</string>
     <string name="diagnosis_title">Diagnosis</string>
+    <string name="diagnosis_subtitle">Other Medical Conditions e.g Diabetic, Asthma, Depression</string>
 
     <string name="about_me">About Me</string>
     <string name="about_me_sitting_position">Sitting (Position/Pattern)</string>
+    <string name="about_me_need_to_use">I Need To Use</string>
     <string name="about_me_breathing">Breathing Difficulties</string>
-    <string name="about_me_eat">How I eat</string>
-    <string name="about_me_drink">How I drink</string>
-    <string name="about_me_toilet">How I use toilet</string>
-    <string name="about_me_sleep">Sleep (Position / Pattern)</string>
-    <string name="about_me_care">Personal Care</string>
+    <string name="about_me_breathing_when">Breathing Difficulties When</string>
+    <string name="about_me_sleep_position">Sleep Position</string>
+    <string name="about_me_swallowing_difficulties">Eating &amp; Drinking</string>
+    <string name="about_me_swallowing_difficulties_subtitle">I Have Swallowing Difficulties</string>
+    <string name="about_me_physical_abilities">Physical Abilities</string>
+    <string name="about_me_physical_abilities_subtitle">I Can Walk</string>
+    <string name="about_me_transfer_to">I Need Help To Transfer To</string>
+
 </resources>

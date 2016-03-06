@@ -19,6 +19,6 @@ public class DiagnosisActivity extends AppCompatActivity {
 
         EditableCardView diagnosis = (EditableCardView) findViewById(R.id.diagnosis);
         diagnosis.setTitle(getString(R.string.diagnosis_title));
-        diagnosis.setText(getString(R.string.diagnosis_title));
+        diagnosis.setSubtitle(getString(R.string.diagnosis_subtitle));
     }
 }

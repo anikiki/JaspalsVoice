@@ -17,12 +17,19 @@ public class LikesDislikesActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_likes_dislikes);
 
-        EditableCardView likes = (EditableCardView) findViewById(R.id.likes);
-        likes.setTitle(getString(R.string.likes));
-        likes.setText(getString(R.string.likes));
+        EditableCardView dailyRoutine = (EditableCardView) findViewById(R.id.daily_routine);
+        dailyRoutine.setTitle(getString(R.string.likes_dislikes_daily_routine));
 
-        EditableCardView dislikes = (EditableCardView) findViewById(R.id.dislikes);
-        dislikes.setTitle(getString(R.string.dislikes));
-        dislikes.setText(getString(R.string.dislikes));
+        EditableCardView hobbies = (EditableCardView) findViewById(R.id.hobbies);
+        hobbies.setTitle(getString(R.string.likes_dislikes_hobbies));
+
+        EditableCardView music = (EditableCardView) findViewById(R.id.music);
+        music.setTitle(getString(R.string.likes_dislikes_music));
+
+        EditableCardView tv = (EditableCardView) findViewById(R.id.tv);
+        tv.setTitle(getString(R.string.likes_dislikes_tv));
+
+        EditableCardView other = (EditableCardView) findViewById(R.id.other);
+        other.setTitle(getString(R.string.likes_dislikes_other));
     }
 }

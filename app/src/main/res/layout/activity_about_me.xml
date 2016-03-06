@@ -22,6 +22,15 @@
             android:padding="@dimen/margin_small"
             app:entries="@array/about_me_sitting_position_item"/>
 
+        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/need_to_use"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"
+            app:entries="@array/about_me_need_to_use"/>
+
         <uk.co.jaspalsvoice.jv.views.YesNoCardView
             android:elevation="@dimen/elevation"
             android:id="@+id/breathing"
@@ -30,45 +39,48 @@
             android:layout_width="match_parent"
             android:padding="@dimen/margin_small"/>
 
-        <uk.co.jaspalsvoice.jv.views.EditableCardView
+        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
             android:elevation="@dimen/elevation"
-            android:id="@+id/eat"
+            android:id="@+id/breathing_when"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"
+            app:entries="@array/about_me_breathing_when"/>
+
+        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/sleep_position"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"
+            app:entries="@array/about_me_sleep_position"/>
+
+        <uk.co.jaspalsvoice.jv.views.YesNoCardView
+            android:elevation="@dimen/elevation"
+            android:id="@+id/swallowing_difficulties"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
             android:padding="@dimen/margin_small"/>
 
-        <uk.co.jaspalsvoice.jv.views.EditableCardView
+        <uk.co.jaspalsvoice.jv.views.YesNoCardView
             android:elevation="@dimen/elevation"
-            android:id="@+id/drink"
+            android:id="@+id/physical_abilities"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
             android:padding="@dimen/margin_small"/>
 
-        <uk.co.jaspalsvoice.jv.views.EditableCardView
+        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
             android:elevation="@dimen/elevation"
-            android:id="@+id/toilet"
+            android:id="@+id/transfer_to"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
-            android:padding="@dimen/margin_small"/>
-
-        <uk.co.jaspalsvoice.jv.views.EditableCardView
-            android:elevation="@dimen/elevation"
-            android:id="@+id/sleep"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_horizontal_margin"
-            android:layout_width="match_parent"
-            android:padding="@dimen/margin_small"/>
-
-        <uk.co.jaspalsvoice.jv.views.EditableCardView
-            android:elevation="@dimen/elevation"
-            android:id="@+id/care"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_horizontal_margin"
-            android:layout_width="match_parent"
-            android:padding="@dimen/margin_small"/>
+            android:padding="@dimen/margin_small"
+            app:entries="@array/about_me_transfer_to"/>
 
     </LinearLayout>
 </ScrollView>

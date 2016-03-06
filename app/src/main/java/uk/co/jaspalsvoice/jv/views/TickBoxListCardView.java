@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import uk.co.jaspalsvoice.jv.R;
@@ -22,6 +23,7 @@ public class TickBoxListCardView extends CardView {
     private String title;
     private boolean editMode;
 
+    private FrameLayout overlayView;
     private TextView titleView;
     private RecyclerView recyclerView;
     private ViewGroup buttonsView;
@@ -58,6 +60,7 @@ public class TickBoxListCardView extends CardView {
         LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.tickbox_list_card_view, this);
 
+        overlayView = (FrameLayout) root.findViewById(R.id.frame_overlay);
         titleView = (TextView) root.findViewById(R.id.title);
         recyclerView = (RecyclerView) root.findViewById(R.id.list);
         buttonsView = (ViewGroup) root.findViewById(R.id.buttons);
@@ -67,6 +70,7 @@ public class TickBoxListCardView extends CardView {
         recyclerView.setAdapter(new TickBoxListAdapter(data));
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
+        recyclerView.setMinimumHeight(computeMinHeight());
 
         titleView.setOnClickListener(new OnClickListener() {
             @Override
@@ -114,14 +118,20 @@ public class TickBoxListCardView extends CardView {
     }
 
     private void showNonEditMode() {
+        overlayView.setVisibility(VISIBLE);
         recyclerView.setVisibility(VISIBLE);
         buttonsView.setVisibility(GONE);
         titleView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.ic_action_edit), null);
     }
 
     private void showEditMode() {
+        overlayView.setVisibility(GONE);
         titleView.setCompoundDrawables(null, null, null, null);
         recyclerView.setVisibility(VISIBLE);
         buttonsView.setVisibility(VISIBLE);
+    }
+
+    private int computeMinHeight() {
+        return data.length * getResources().getDimensionPixelSize(R.dimen.list_card_item_min_height);
     }
 }

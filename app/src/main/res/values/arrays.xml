@@ -12,5 +12,32 @@
         <item>I Need To Use Adjustable Bed</item>
         <item>Extra Pillows</item>
         <item>Pressure Relief</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="about_me_need_to_use">
+        <item>Adjustable Bed</item>
+        <item>Extra Pillows</item>
+        <item>Pressure Relief</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="about_me_breathing_when">
+        <item>At Rest</item>
+        <item>Moving A lot</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="about_me_sleep_position">
+        <item>I Can Lie Flat</item>
+        <item>I Can Move Myself In Bed</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="about_me_transfer_to">
+        <item>Bed</item>
+        <item>A Chair</item>
+        <item>The Toilet</item>
+        <item>Other</item>
     </string-array>
 </resources>

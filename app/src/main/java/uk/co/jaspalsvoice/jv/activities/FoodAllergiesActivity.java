@@ -19,6 +19,5 @@ public class FoodAllergiesActivity extends AppCompatActivity {
 
         EditableCardView foodAllergies = (EditableCardView) findViewById(R.id.food_allergies);
         foodAllergies.setTitle(getString(R.string.food_allergies_title));
-        foodAllergies.setText(getString(R.string.food_allergies_title));
     }
 }

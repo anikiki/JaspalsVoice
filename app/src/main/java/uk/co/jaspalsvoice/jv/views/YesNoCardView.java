@@ -2,6 +2,7 @@ package uk.co.jaspalsvoice.jv.views;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +18,14 @@ import uk.co.jaspalsvoice.jv.R;
  */
 public class YesNoCardView extends CardView {
     private String title;
+    private String subtitle;
     private String text;
     private boolean editMode;
 
     private String[] options;
 
     private TextView titleView;
+    private TextView optionalSubtitleView;
     private TextView textView;
     private Spinner spinnerView;
     private ViewGroup buttonsView;
@@ -49,6 +52,7 @@ public class YesNoCardView extends CardView {
         View root = inflater.inflate(R.layout.yes_no_card_view, this);
 
         titleView = (TextView) root.findViewById(R.id.title);
+        optionalSubtitleView = (TextView) root.findViewById(R.id.subtitle);
         textView = (TextView) root.findViewById(R.id.text);
         spinnerView = (Spinner) root.findViewById(R.id.spinner);
         buttonsView = (ViewGroup) root.findViewById(R.id.buttons);
@@ -97,6 +101,16 @@ public class YesNoCardView extends CardView {
         return title;
     }
 
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+        optionalSubtitleView.setVisibility(TextUtils.isEmpty(subtitle) ? GONE : VISIBLE);
+        optionalSubtitleView.setText(subtitle);
+    }
+
     public void setText(String text) {
         this.text = text;
         textView.setText(text);
@@ -105,6 +119,7 @@ public class YesNoCardView extends CardView {
     public String getText() {
         return text;
     }
+
 
     public void setSpinner(String text) {
         String[] options = getResources().getStringArray(R.array.yes_no_spinner_item);
@@ -128,11 +143,13 @@ public class YesNoCardView extends CardView {
         spinnerView.setVisibility(GONE);
         buttonsView.setVisibility(GONE);
         textView.setVisibility(VISIBLE);
+        optionalSubtitleView.setVisibility(TextUtils.isEmpty(subtitle) ? GONE : VISIBLE);
         titleView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.ic_action_edit), null);
     }
 
     private void showEditMode() {
         titleView.setCompoundDrawables(null, null, null, null);
+        optionalSubtitleView.setVisibility(TextUtils.isEmpty(subtitle) ? GONE : VISIBLE);
         textView.setVisibility(GONE);
         spinnerView.setVisibility(VISIBLE);
         buttonsView.setVisibility(VISIBLE);

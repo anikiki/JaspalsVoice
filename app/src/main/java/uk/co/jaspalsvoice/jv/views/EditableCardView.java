@@ -2,6 +2,7 @@ package uk.co.jaspalsvoice.jv.views;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +18,12 @@ import uk.co.jaspalsvoice.jv.R;
  */
 public class EditableCardView extends CardView {
     private String title;
+    private String subtitle;
     private String text;
     private boolean editMode;
 
     private TextView titleView;
+    private TextView optionalSubtitleView;
     private TextView textView;
     private EditText editView;
     private ViewGroup buttonsView;
@@ -47,11 +50,14 @@ public class EditableCardView extends CardView {
         View root = inflater.inflate(R.layout.editable_card_view, this);
 
         titleView = (TextView) root.findViewById(R.id.title);
+        optionalSubtitleView = (TextView) root.findViewById(R.id.subtitle);
         textView = (TextView) root.findViewById(R.id.text);
         editView = (EditText) root.findViewById(R.id.edit);
         buttonsView = (ViewGroup) root.findViewById(R.id.buttons);
         cancelBtn = (Button) root.findViewById(R.id.cancel);
         saveBtn = (Button) root.findViewById(R.id.save);
+
+        showDefaultText();
 
         titleView.setOnClickListener(new OnClickListener() {
             @Override
@@ -92,6 +98,16 @@ public class EditableCardView extends CardView {
         return title;
     }
 
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+        optionalSubtitleView.setVisibility(TextUtils.isEmpty(subtitle) ? GONE : VISIBLE);
+        optionalSubtitleView.setText(subtitle);
+    }
+
     public void setText(String text) {
         this.text = text;
         textView.setText(text);
@@ -117,13 +133,22 @@ public class EditableCardView extends CardView {
         editView.setVisibility(GONE);
         buttonsView.setVisibility(GONE);
         textView.setVisibility(VISIBLE);
+        showDefaultText();
+        optionalSubtitleView.setVisibility(TextUtils.isEmpty(subtitle) ? GONE : VISIBLE);
         titleView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.ic_action_edit), null);
     }
 
     private void showEditMode() {
         titleView.setCompoundDrawables(null, null, null, null);
+        optionalSubtitleView.setVisibility(TextUtils.isEmpty(subtitle) ? GONE : VISIBLE);
         textView.setVisibility(GONE);
         editView.setVisibility(VISIBLE);
         buttonsView.setVisibility(VISIBLE);
+    }
+
+    private void showDefaultText() {
+        if (TextUtils.isEmpty(text)) {
+            textView.setText(R.string.default_text_when_not_specified);
+        }
     }
 }
