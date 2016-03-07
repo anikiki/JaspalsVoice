@@ -1,4 +1,4 @@
-package uk.co.jaspalsvoice.jv.views;
+package uk.co.jaspalsvoice.jv.views.tickbox;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

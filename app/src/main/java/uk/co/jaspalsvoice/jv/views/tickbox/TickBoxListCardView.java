@@ -1,4 +1,4 @@
-package uk.co.jaspalsvoice.jv.views;
+package uk.co.jaspalsvoice.jv.views.tickbox;
 
 import android.content.Context;
 import android.content.res.TypedArray;

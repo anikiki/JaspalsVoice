@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import uk.co.jaspalsvoice.jv.R;
-import uk.co.jaspalsvoice.jv.views.MedicalContactCardView;
+import uk.co.jaspalsvoice.jv.views.custom.MedicalContactCardView;
 
 /**
  * Created by Ana on 2/8/2016.

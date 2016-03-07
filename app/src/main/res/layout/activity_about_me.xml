@@ -13,7 +13,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
-        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+        <uk.co.jaspalsvoice.jv.views.tickbox.TickBoxListCardView
             android:elevation="@dimen/elevation"
             android:id="@+id/sitting_position"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:padding="@dimen/margin_small"
             app:entries="@array/about_me_sitting_position_item"/>
 
-        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+        <uk.co.jaspalsvoice.jv.views.tickbox.TickBoxListCardView
             android:elevation="@dimen/elevation"
             android:id="@+id/need_to_use"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:padding="@dimen/margin_small"/>
 
-        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+        <uk.co.jaspalsvoice.jv.views.tickbox.TickBoxListCardView
             android:elevation="@dimen/elevation"
             android:id="@+id/breathing_when"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:padding="@dimen/margin_small"
             app:entries="@array/about_me_breathing_when"/>
 
-        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+        <uk.co.jaspalsvoice.jv.views.tickbox.TickBoxListCardView
             android:elevation="@dimen/elevation"
             android:id="@+id/sleep_position"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:padding="@dimen/margin_small"/>
 
-        <uk.co.jaspalsvoice.jv.views.TickBoxListCardView
+        <uk.co.jaspalsvoice.jv.views.tickbox.TickBoxListCardView
             android:elevation="@dimen/elevation"
             android:id="@+id/transfer_to"
             android:layout_height="wrap_content"

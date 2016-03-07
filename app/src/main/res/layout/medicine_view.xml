@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:stretchColumns="1">
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/medicines_name"/>
+
+        <EditText
+            android:id="@+id/edit_value_name"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_width="0dp"/>
+
+        <TextView
+            android:id="@+id/show_value_name"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/default_text_when_not_specified"
+            android:visibility="gone"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/medicines_dosage"/>
+
+        <EditText
+            android:id="@+id/edit_value_dosage"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_width="0dp"/>
+
+        <TextView
+            android:id="@+id/show_value_dosage"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/default_text_when_not_specified"
+            android:visibility="gone"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/medicines_reason"/>
+
+        <EditText
+            android:id="@+id/edit_value_reason"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_width="0dp"/>
+
+        <TextView
+            android:id="@+id/show_value_reason"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/default_text_when_not_specified"
+            android:visibility="gone"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/medicines_frequency"/>
+
+        <EditText
+            android:id="@+id/edit_value_frequency"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_width="0dp"/>
+
+        <TextView
+            android:id="@+id/show_value_frequency"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/default_text_when_not_specified"
+            android:visibility="gone"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:text="@string/medicines_edit"/>
+    </TableRow>
+</TableLayout>

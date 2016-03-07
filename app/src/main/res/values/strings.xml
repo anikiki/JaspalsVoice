@@ -50,6 +50,12 @@
 
     <string name="medicines">Medicines</string>
     <string name="medicines_title">How I take my medication</string>
+    <string name="medicines_name">Name</string>
+    <string name="medicines_dosage">Dosage</string>
+    <string name="medicines_reason">Reason</string>
+    <string name="medicines_frequency">Frequency</string>
+    <string name="medicines_edit">Edit</string>
+    <string name="medicines_add">Add medicine</string>
 
     <string name="medical_allergies">Medical Allergies</string>
     <string name="medical_allergies_title">Medical Allergies</string>

@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import uk.co.jaspalsvoice.jv.R;
-import uk.co.jaspalsvoice.jv.views.TickBoxListCardView;
 import uk.co.jaspalsvoice.jv.views.YesNoCardView;
+import uk.co.jaspalsvoice.jv.views.tickbox.TickBoxListCardView;
 
 /**
  * Created by Ana on 2/8/2016.
