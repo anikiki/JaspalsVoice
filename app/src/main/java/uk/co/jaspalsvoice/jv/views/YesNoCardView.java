@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import uk.co.jaspalsvoice.jv.JvApplication;
+import uk.co.jaspalsvoice.jv.JvPreferences;
 import uk.co.jaspalsvoice.jv.R;
 
 /**
@@ -21,6 +23,7 @@ public class YesNoCardView extends CardView {
     private String subtitle;
     private String text;
     private boolean editMode;
+    private int titleId;
 
     private String[] options;
 
@@ -31,6 +34,8 @@ public class YesNoCardView extends CardView {
     private ViewGroup buttonsView;
     private Button cancelBtn;
     private Button saveBtn;
+
+    private JvPreferences preferences;
 
     public YesNoCardView(Context context) {
         super(context);
@@ -48,6 +53,8 @@ public class YesNoCardView extends CardView {
     }
 
     private void init(final Context context) {
+        preferences = ((JvApplication)context.getApplicationContext()).getPreferences();
+
         LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.yes_no_card_view, this);
 
@@ -88,6 +95,7 @@ public class YesNoCardView extends CardView {
             public void onClick(View v) {
                 setText(spinnerView.getSelectedItem().toString());
                 showNonEditMode();
+                save();
             }
         });
     }
@@ -122,7 +130,6 @@ public class YesNoCardView extends CardView {
 
 
     public void setSpinner(String text) {
-        String[] options = getResources().getStringArray(R.array.yes_no_spinner_item);
         for (int i = 0; i < options.length; i++) {
             if (options[i].equals(text)) {
                 spinnerView.setSelection(i);
@@ -139,6 +146,14 @@ public class YesNoCardView extends CardView {
         return editMode;
     }
 
+    public int getTitleId() {
+        return titleId;
+    }
+
+    public void setTitleId(int titleId) {
+        this.titleId = titleId;
+    }
+
     private void showNonEditMode() {
         spinnerView.setVisibility(GONE);
         buttonsView.setVisibility(GONE);
@@ -153,5 +168,14 @@ public class YesNoCardView extends CardView {
         textView.setVisibility(GONE);
         spinnerView.setVisibility(VISIBLE);
         buttonsView.setVisibility(VISIBLE);
+    }
+
+    private void save() {
+        switch (titleId) {
+            case R.string.personal_details_translator_needed:
+                int selection = spinnerView.getSelectedItemPosition();
+                preferences.setPersonalDetailsNeedTranslator(selection == 0);
+                break;
+        }
     }
 }

@@ -1,6 +1,7 @@
 package uk.co.jaspalsvoice.jv.views.custom;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -11,7 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import uk.co.jaspalsvoice.jv.JvApplication;
 import uk.co.jaspalsvoice.jv.R;
+import uk.co.jaspalsvoice.jv.models.Doctor;
 
 /**
  * Created by Ana on 2/21/2016.
@@ -20,6 +26,7 @@ public class MedicalContactCardView extends CardView {
     private String title;
     private String text1;
     private String text2;
+    private String doctorType;
     private boolean editMode;
 
     private TextView titleView;
@@ -35,6 +42,8 @@ public class MedicalContactCardView extends CardView {
     private ViewGroup buttonsView;
     private Button cancelBtn;
     private Button saveBtn;
+
+    private JvApplication application;
 
     public MedicalContactCardView(Context context) {
         super(context);
@@ -52,6 +61,7 @@ public class MedicalContactCardView extends CardView {
     }
 
     private void init(final Context context) {
+        application = (JvApplication) context.getApplicationContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.medical_contact_card_view, this);
 
@@ -96,9 +106,7 @@ public class MedicalContactCardView extends CardView {
         saveBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                setText1(edit1View.getText().toString());
-                setText2(edit2View.getText().toString());
-                showNonEditMode();
+                new Save().execute(edit1View.getText().toString(), edit2View.getText().toString());
             }
         });
     }
@@ -128,6 +136,14 @@ public class MedicalContactCardView extends CardView {
 
     public String getText1() {
         return text1;
+    }
+
+    public String getDoctorType() {
+        return doctorType;
+    }
+
+    public void setDoctorType(String doctorType) {
+        this.doctorType = doctorType;
     }
 
     public void setEdit(EditText editView, String text) {
@@ -175,6 +191,27 @@ public class MedicalContactCardView extends CardView {
         }
         if (TextUtils.isEmpty(text2)) {
             text2View.setText(R.string.default_text_when_not_specified);
+        }
+    }
+
+    private class Save extends AsyncTask<String, Void, Doctor> {
+        @Override
+        protected Doctor doInBackground(String... params) {
+            List<Doctor> doctors = new ArrayList<>();
+            Doctor doctor = new Doctor();
+            doctor.setName(params[0]);
+            doctor.setContact(params[1]);
+            doctor.setType(doctorType);
+            doctors.add(doctor);
+            application.getDbHelper().insertOrReplaceDoctor(doctors);
+            return doctor;
+        }
+
+        @Override
+        protected void onPostExecute(Doctor doctor) {
+            setText1(doctor.getName());
+            setText2(doctor.getContact());
+            showNonEditMode();
         }
     }
 }

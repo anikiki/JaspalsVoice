@@ -132,6 +132,6 @@ public class TickBoxListCardView extends CardView {
     }
 
     private int computeMinHeight() {
-        return data.length * getResources().getDimensionPixelSize(R.dimen.list_card_item_min_height);
+        return (data.length + 1) * getResources().getDimensionPixelSize(R.dimen.list_card_item_min_height);
     }
 }

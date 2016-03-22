@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import uk.co.jaspalsvoice.jv.JvApplication;
+import uk.co.jaspalsvoice.jv.JvPreferences;
 import uk.co.jaspalsvoice.jv.R;
 
 /**
@@ -21,6 +23,7 @@ public class EditableCardView extends CardView {
     private String subtitle;
     private String text;
     private boolean editMode;
+    private int titleId;
 
     private TextView titleView;
     private TextView optionalSubtitleView;
@@ -29,6 +32,8 @@ public class EditableCardView extends CardView {
     private ViewGroup buttonsView;
     private Button cancelBtn;
     private Button saveBtn;
+
+    private JvPreferences preferences;
 
     public EditableCardView(Context context) {
         super(context);
@@ -46,6 +51,8 @@ public class EditableCardView extends CardView {
     }
 
     private void init(final Context context) {
+        preferences = ((JvApplication)context.getApplicationContext()).getPreferences();
+
         LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.editable_card_view, this);
 
@@ -85,6 +92,7 @@ public class EditableCardView extends CardView {
             public void onClick(View v) {
                 setText(editView.getText().toString());
                 showNonEditMode();
+                save();
             }
         });
     }
@@ -96,6 +104,14 @@ public class EditableCardView extends CardView {
 
     public String getTitle() {
         return title;
+    }
+
+    public int getTitleId() {
+        return titleId;
+    }
+
+    public void setTitleId(int titleId) {
+        this.titleId = titleId;
     }
 
     public String getSubtitle() {
@@ -149,6 +165,32 @@ public class EditableCardView extends CardView {
     private void showDefaultText() {
         if (TextUtils.isEmpty(text)) {
             textView.setText(R.string.default_text_when_not_specified);
+        }
+    }
+
+    private void save() {
+        switch (titleId) {
+            case R.string.personal_details_name:
+                preferences.setPersonalDetailsName(text);
+                break;
+            case R.string.personal_details_name_to_be_called:
+                preferences.setPersonalDetailsPreferredName(text);
+                break;
+            case R.string.personal_details_live_with:
+                preferences.setPersonalDetailsLiveWith(text);
+                break;
+            case R.string.personal_details_email:
+                preferences.setPersonalDetailsEmail(text);
+                break;
+            case R.string.personal_details_dob:
+                preferences.setPersonalDetailsDateOfBirth(text);
+                break;
+            case R.string.personal_details_main_carer:
+                preferences.setPersonalDetailsMainCarer(text);
+                break;
+            case R.string.personal_details_carer_tel:
+                preferences.setPersonalDetailsCarerTel(text);
+                break;
         }
     }
 }
