@@ -18,43 +18,67 @@
             android:layout_width="match_parent">
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/two"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/personal_info"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_personal_details"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/personal_info"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_personal_details"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/three"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/medicines"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_medicines"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/medicines"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_medicines"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
 
         </TableRow>
@@ -65,43 +89,67 @@
             android:layout_width="match_parent">
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/five"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/medical_allergies"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_medical_allergies"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/medical_allergies"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_medical_allergies"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/six"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/food_allergies"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_food_allergies"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/food_allergies"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_food_allergies"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
 
         </TableRow>
@@ -112,43 +160,67 @@
             android:layout_width="match_parent">
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/eight"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/gp_medical_team"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_gp"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/gp_medical_team"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_gp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/nine"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/gp_medical_team"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_likes_dislikes"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/likes_dislikes"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_likes_dislikes"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
         </TableRow>
 
@@ -158,43 +230,67 @@
             android:layout_width="match_parent">
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/zero"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/diagnosis"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_diagnosis"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/diagnosis"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_diagnosis"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
 
             <FrameLayout
+                android:background="@drawable/key_selector"
                 android:clickable="true"
                 android:id="@+id/hash"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/margin_xx_small"
                 android:layout_weight="1"
-                android:layout_width="0dp">
+                android:layout_width="0dp"
+                android:padding="@dimen/margin_normal">
 
-                <TextView
-                    android:background="@drawable/key_selector"
-                    android:drawableTop="@drawable/diagnosis"
+                <LinearLayout
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:padding="@dimen/margin_normal"
-                    android:text="@string/key_about_me"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_normal_size"/>
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/about_me"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/key_about_me"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_normal_size"/>
+                </LinearLayout>
             </FrameLayout>
 
         </TableRow>

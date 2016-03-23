@@ -10,7 +10,7 @@
     <string name="key_personal_details">"Personal\ndetails"</string>
 
     <string name="key_abc_2">"2\nABC"</string>
-    <string name="key_medicines">Medicines</string>
+    <string name="key_medicines">\nMedicines</string>
 
     <string name="key_def_3">"3\nDEF</string>
     <string name="key_medical_allergies">"Medical\nallergies"</string>
@@ -25,10 +25,10 @@
     <string name="key_likes_dislikes">"Likes /\nDislikes"</string>
 
     <string name="key_pqrs_7">"7\nPQRS"</string>
-    <string name="key_diagnosis">Diagnosis</string>
+    <string name="key_diagnosis">\nDiagnosis</string>
 
     <string name="key_tuv_8">"8\nTUV"</string>
-    <string name="key_about_me">"About\nme"</string>
+    <string name="key_about_me">"\nAbout me"</string>
 
     <string name="key_wxyz_9">"9\nWXYZ"</string>
     <string name="key_letter_case">"*\nAa/A/a"</string>
