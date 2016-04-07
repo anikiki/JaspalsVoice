@@ -97,6 +97,8 @@ public class MedicalContactCardView extends CardView {
         cancelBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                editMode = !editMode;
+
                 setEdit(edit1View, text1);
                 setEdit(edit2View, text2);
                 showNonEditMode();
@@ -106,6 +108,8 @@ public class MedicalContactCardView extends CardView {
         saveBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                editMode = !editMode;
+
                 new Save().execute(edit1View.getText().toString(), edit2View.getText().toString());
             }
         });
@@ -180,7 +184,9 @@ public class MedicalContactCardView extends CardView {
         titleView.setCompoundDrawables(null, null, null, null);
         text1View.setVisibility(GONE);
         text2View.setVisibility(GONE);
+        edit1View.setText(text1View.getText());
         edit1View.setVisibility(VISIBLE);
+        edit2View.setText(text2View.getText());
         edit2View.setVisibility(VISIBLE);
         buttonsView.setVisibility(VISIBLE);
     }

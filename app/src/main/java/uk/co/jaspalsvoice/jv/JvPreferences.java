@@ -19,6 +19,17 @@ public class JvPreferences {
     private static final String PERSONAL_DETAILS_CARER_TEL = "pd_carer_tel";
     private static final String PERSONAL_DETAILS_NEED_TRANSLATOR = "pd_need_translator";
 
+    private static final String MEDICAL_ALLERGIES = "ma_medical_allergies";
+    private static final String FOOD_ALLERGIES = "fa_food_allergies";
+
+    private static final String LIKES_DISLIKES_ROUTINE = "ld_routine";
+    private static final String LIKES_DISLIKES_HOBBIES = "ld_hobbies";
+    private static final String LIKES_DISLIKES_MUSIC = "ld_music";
+    private static final String LIKES_DISLIKES_TELEVISION = "ld_television";
+    private static final String LIKES_DISLIKES_OTHER = "ld_other";
+
+    private static final String DIAGNOSIS = "d_diagnosis";
+
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
 
@@ -89,5 +100,69 @@ public class JvPreferences {
 
     public void setPersonalDetailsNeedTranslator(boolean needTranslator) {
         editor.putBoolean(PERSONAL_DETAILS_NEED_TRANSLATOR, needTranslator).apply();
+    }
+
+    public String getMedicalAllergies() {
+        return preferences.getString(MEDICAL_ALLERGIES, "");
+    }
+
+    public void setMedicalAllergies(String allergies) {
+        editor.putString(MEDICAL_ALLERGIES, allergies).apply();
+    }
+
+    public String getFoodAllergies() {
+        return preferences.getString(FOOD_ALLERGIES, "");
+    }
+
+    public void setFoodAllergies(String allergies) {
+        editor.putString(FOOD_ALLERGIES, allergies).apply();
+    }
+
+    public String getLikesDislikesRoutine() {
+        return preferences.getString(LIKES_DISLIKES_ROUTINE, "");
+    }
+
+    public void setLikesDislikesRoutine(String routine) {
+        editor.putString(LIKES_DISLIKES_ROUTINE, routine).apply();
+    }
+
+    public String getLikesDislikesHobbies() {
+        return preferences.getString(LIKES_DISLIKES_HOBBIES, "");
+    }
+
+    public void setLikesDislikesHobbies(String hobbies) {
+        editor.putString(LIKES_DISLIKES_HOBBIES, hobbies).apply();
+    }
+
+    public String getLikesDislikesMusic() {
+        return preferences.getString(LIKES_DISLIKES_MUSIC, "");
+    }
+
+    public void setLikesDislikesMusic(String music) {
+        editor.putString(LIKES_DISLIKES_MUSIC, music).apply();
+    }
+
+    public String getLikesDislikesTelevision() {
+        return preferences.getString(LIKES_DISLIKES_TELEVISION, "");
+    }
+
+    public void setLikesDislikesTelevision(String television) {
+        editor.putString(LIKES_DISLIKES_TELEVISION, television).apply();
+    }
+
+    public String getLikesDislikesOther() {
+        return preferences.getString(LIKES_DISLIKES_OTHER, "");
+    }
+
+    public void setLikesDislikesOther(String other) {
+        editor.putString(LIKES_DISLIKES_OTHER, other).apply();
+    }
+
+    public String getDiagnosis() {
+        return preferences.getString(DIAGNOSIS, "");
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        editor.putString(DIAGNOSIS, diagnosis).apply();
     }
 }

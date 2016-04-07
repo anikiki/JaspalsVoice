@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
     <TextView
         android:drawableRight="@drawable/ic_action_edit"
@@ -14,7 +15,7 @@
         android:layout_width="match_parent"
         android:minWidth="@dimen/label_min_width"
         android:padding="@dimen/margin_small"
-        android:textSize="@dimen/text_normal_size"
+        android:textSize="@dimen/text_big_size"
         tools:text="Title"/>
 
     <include layout="@layout/divider"/>
@@ -27,6 +28,7 @@
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
         android:singleLine="false"
+        android:textSize="@dimen/text_normal_size"
         android:visibility="gone"
         tools:text="Text"/>
 
@@ -38,6 +40,7 @@
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
         android:singleLine="false"
+        android:textSize="@dimen/text_normal_size"
         tools:text="Text"/>
 
     <EditText
@@ -47,6 +50,7 @@
         android:layout_marginTop="@dimen/margin_small"
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
+        android:textSize="@dimen/text_normal_size"
         android:visibility="gone"
         tools:text="Edit this"/>
 
@@ -59,15 +63,19 @@
         android:visibility="gone">
 
         <Button
+            style="@style/DefaultButton"
             android:id="@+id/cancel"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:text="Cancel"/>
 
         <Button
+            style="@style/DefaultButton"
             android:id="@+id/save"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:text="Save"/>

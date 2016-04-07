@@ -3,6 +3,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:orientation="vertical">
@@ -14,7 +15,7 @@
         android:layout_width="match_parent"
         android:minWidth="@dimen/label_min_width"
         android:padding="@dimen/margin_small"
-        android:textSize="@dimen/text_normal_size"
+        android:textSize="@dimen/text_big_size"
         tools:text="Title"/>
 
     <include layout="@layout/divider"/>
@@ -22,11 +23,11 @@
     <TextView
         android:id="@+id/label1"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
         android:singleLine="false"
+        android:textSize="@dimen/text_normal_size"
         android:textStyle="bold"
         tools:text="Text"/>
 
@@ -34,10 +35,10 @@
         android:id="@+id/text1"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_small"
-        android:layout_marginTop="@dimen/margin_small"
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
         android:singleLine="false"
+        android:textSize="@dimen/text_normal_size"
         tools:text="Text"/>
 
     <EditText
@@ -47,17 +48,18 @@
         android:layout_marginTop="@dimen/margin_small"
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
+        android:textSize="@dimen/text_normal_size"
         android:visibility="gone"
         tools:text="Edit this"/>
 
     <TextView
         android:id="@+id/label2"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
         android:singleLine="false"
+        android:textSize="@dimen/text_normal_size"
         android:textStyle="bold"
         tools:text="Text"/>
 
@@ -65,10 +67,10 @@
         android:id="@+id/text2"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_small"
-        android:layout_marginTop="@dimen/margin_small"
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
         android:singleLine="false"
+        android:textSize="@dimen/text_normal_size"
         tools:text="Text"/>
 
     <EditText
@@ -78,6 +80,7 @@
         android:layout_marginTop="@dimen/margin_small"
         android:layout_width="match_parent"
         android:padding="@dimen/margin_small"
+        android:textSize="@dimen/text_normal_size"
         android:visibility="gone"
         tools:text="Edit this"/>
 
@@ -90,15 +93,19 @@
         android:visibility="gone">
 
         <Button
+            style="@style/DefaultButton"
             android:id="@+id/cancel"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:text="Cancel"/>
 
         <Button
+            style="@style/DefaultButton"
             android:id="@+id/save"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:text="Save"/>

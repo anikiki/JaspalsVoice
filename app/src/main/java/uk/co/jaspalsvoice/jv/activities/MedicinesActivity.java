@@ -1,7 +1,6 @@
 package uk.co.jaspalsvoice.jv.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -15,7 +14,7 @@ import uk.co.jaspalsvoice.jv.views.custom.medicine.MedicineListAdapter;
 /**
  * Created by Ana on 2/8/2016.
  */
-public class MedicinesActivity extends AppCompatActivity {
+public class MedicinesActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,7 +2,6 @@ package uk.co.jaspalsvoice.jv.activities;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import java.util.Map;
 
@@ -15,7 +14,7 @@ import uk.co.jaspalsvoice.jv.views.custom.MedicalContactCardView;
 /**
  * Created by Ana on 2/8/2016.
  */
-public class GpActivity extends AppCompatActivity {
+public class GpActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -51,7 +51,7 @@ public class EditableCardView extends CardView {
     }
 
     private void init(final Context context) {
-        preferences = ((JvApplication)context.getApplicationContext()).getPreferences();
+        preferences = ((JvApplication) context.getApplicationContext()).getPreferences();
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(R.layout.editable_card_view, this);
@@ -82,6 +82,8 @@ public class EditableCardView extends CardView {
         cancelBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                editMode = !editMode;
+
                 setEdit(text);
                 showNonEditMode();
             }
@@ -90,6 +92,8 @@ public class EditableCardView extends CardView {
         saveBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                editMode = !editMode;
+
                 setText(editView.getText().toString());
                 showNonEditMode();
                 save();
@@ -126,7 +130,7 @@ public class EditableCardView extends CardView {
 
     public void setText(String text) {
         this.text = text;
-        textView.setText(text);
+        textView.setText(TextUtils.isEmpty(text) ? getResources().getString(R.string.default_text_when_not_specified) : text);
     }
 
     public String getText() {
@@ -158,6 +162,7 @@ public class EditableCardView extends CardView {
         titleView.setCompoundDrawables(null, null, null, null);
         optionalSubtitleView.setVisibility(TextUtils.isEmpty(subtitle) ? GONE : VISIBLE);
         textView.setVisibility(GONE);
+        editView.setText(getSavedText());
         editView.setVisibility(VISIBLE);
         buttonsView.setVisibility(VISIBLE);
     }
@@ -191,6 +196,82 @@ public class EditableCardView extends CardView {
             case R.string.personal_details_carer_tel:
                 preferences.setPersonalDetailsCarerTel(text);
                 break;
+            case R.string.medical_allergies_title:
+                preferences.setMedicalAllergies(text);
+                break;
+            case R.string.food_allergies_title:
+                preferences.setFoodAllergies(text);
+                break;
+            case R.string.likes_dislikes_daily_routine:
+                preferences.setLikesDislikesRoutine(text);
+                break;
+            case R.string.likes_dislikes_hobbies:
+                preferences.setLikesDislikesHobbies(text);
+                break;
+            case R.string.likes_dislikes_music:
+                preferences.setLikesDislikesMusic(text);
+                break;
+            case R.string.likes_dislikes_tv:
+                preferences.setLikesDislikesTelevision(text);
+                break;
+            case R.string.likes_dislikes_other:
+                preferences.setLikesDislikesOther(text);
+                break;
+            case R.string.diagnosis_title:
+                preferences.setDiagnosis(text);
+                break;
         }
+    }
+
+    private String getSavedText() {
+        String text = "";
+        switch (titleId) {
+            case R.string.personal_details_name:
+                text = preferences.getPersonalDetailsName();
+                break;
+            case R.string.personal_details_name_to_be_called:
+                text = preferences.getPersonalDetailsPreferredName();
+                break;
+            case R.string.personal_details_live_with:
+                text = preferences.getPersonalDetailsLiveWith();
+                break;
+            case R.string.personal_details_email:
+                text = preferences.getPersonalDetailsEmail();
+                break;
+            case R.string.personal_details_dob:
+                text = preferences.getPersonalDetailsDateOfBirth();
+                break;
+            case R.string.personal_details_main_carer:
+                text = preferences.getPersonalDetailsMainCarer();
+                break;
+            case R.string.personal_details_carer_tel:
+                text = preferences.getPersonalDetailsCarerTel();
+                break;
+            case R.string.medical_allergies_title:
+                text = preferences.getMedicalAllergies();
+                break;
+            case R.string.food_allergies_title:
+                text = preferences.getFoodAllergies();
+                break;
+            case R.string.likes_dislikes_daily_routine:
+                text = preferences.getLikesDislikesRoutine();
+                break;
+            case R.string.likes_dislikes_hobbies:
+                text = preferences.getLikesDislikesHobbies();
+                break;
+            case R.string.likes_dislikes_music:
+                text = preferences.getLikesDislikesMusic();
+                break;
+            case R.string.likes_dislikes_tv:
+                text = preferences.getLikesDislikesTelevision();
+                break;
+            case R.string.likes_dislikes_other:
+                text = preferences.getLikesDislikesOther();
+                break;
+            case R.string.diagnosis_title:
+                text = preferences.getDiagnosis();
+                break;
+        }
+        return text;
     }
 }

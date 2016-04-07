@@ -1,10 +1,7 @@
 package uk.co.jaspalsvoice.jv.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-import uk.co.jaspalsvoice.jv.JvApplication;
-import uk.co.jaspalsvoice.jv.JvPreferences;
 import uk.co.jaspalsvoice.jv.R;
 import uk.co.jaspalsvoice.jv.views.EditableCardView;
 import uk.co.jaspalsvoice.jv.views.YesNoCardView;
@@ -12,16 +9,13 @@ import uk.co.jaspalsvoice.jv.views.YesNoCardView;
 /**
  * Created by Ana on 2/7/2016.
  */
-public class PersonalDetailsActivity extends AppCompatActivity {
+public class PersonalDetailsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_personal_details);
-
-        JvApplication application = (JvApplication) getApplicationContext();
-        JvPreferences preferences = application.getPreferences();
 
         EditableCardView name = (EditableCardView) findViewById(R.id.pd_name);
         name.setTitle(getString(R.string.personal_details_name));
